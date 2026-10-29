@@ -1,31 +1,27 @@
 # Abest eSIM Luck Wheel Bot
 
-بوت يولد إيميلات مؤقتة من mail.tm ويدور عجلة الحظ على abestesim.com لحد ما يجي Free eSIM، ويبعتلك النتيجة على تيليجرام.
+بوت تيليجرام يدور عجلة الحظ على abestesim.com باستخدام إيميلات mail.tm.
 
-## الملفات
+## الأوامر
 
-- `bot.py` — السكربت الرئيسي
-- `Dockerfile` — جاهز لـ Railway
-- `requirements.txt`
-- `.env.example` — مثال للمتغيرات
+- `/start` → يبدأ الدوران
+- `/stop`  → يوقف البوت فوراً
+- `/help`  → المساعدة
 
-## النشر على Railway
-
-1. ارفع المشروع على GitHub
-2. ادخل [railway.app](https://railway.app) → New Project → Deploy from GitHub
-3. اختار الريبو
-4. أضف المتغيرات دي في Variables:
+## المتغيرات المطلوبة (Railway Variables)
 
 ```
 TELEGRAM_BOT_TOKEN=xxxx:yyyy
-TELEGRAM_CHAT_ID=123456789
-MAX_ATTEMPTS=30
+MAX_ATTEMPTS=50
 ```
 
-5. اضغط Deploy
+> ملاحظة: مفيش حاجة لـ TELEGRAM_CHAT_ID دلوقتي لأن البوت بيرد على اللي بيكتب الأمر.
 
-## ملاحظات
+## النشر على Railway
 
-- البوت شغال headless (مناسب للسيرفر)
-- الـ Captcha ممكن يوقف الأتمتة أحيانًا
-- Free eSIM نادر، فممكن يحتاج محاولات كتير
+1. ارفع الكود على GitHub
+2. New Project → Deploy from GitHub
+3. حط `TELEGRAM_BOT_TOKEN` في Variables
+4. Deploy
+
+البوت هيشتغل ويستنى أوامر `/start` و `/stop`.
